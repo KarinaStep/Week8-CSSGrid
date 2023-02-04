@@ -1,0 +1,113 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-weight: bold;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header {
+    align-items: center;
+    display: grid;
+    background-color: black;
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+.menu {
+    align-items: center;
+    display: grid;
+    background-color: red;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    display: grid;
+    background-color: rgb(132, 174, 230);
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.main {
+    align-items: center;
+    display: grid;
+    background-color: brown;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    display: grid;
+    background-color: rgb(209, 183, 209);
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    background-color: rgb(37, 169, 37);
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+.banner {
+    align-items: center;
+    display: grid;
+    background-color: rgb(246, 131, 9);
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+  .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 2fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu banner banner banner"
+        "menu extra extra image"
+        ;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1fr 2fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
